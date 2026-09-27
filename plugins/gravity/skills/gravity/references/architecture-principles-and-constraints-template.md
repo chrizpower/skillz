@@ -1,4 +1,4 @@
-# Architecture Principles and Constraints: <system or component>
+# Architectural Constraints and Principles: <system or component>
 
 Scope: <boundary and governed decisions>
 Status: <draft, accepted with source, or mixed with entry-level status>

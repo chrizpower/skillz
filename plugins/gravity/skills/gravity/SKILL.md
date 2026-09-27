@@ -51,6 +51,6 @@ Use the [template](references/architecture-principles-and-constraints-template.m
 
 Finish when the rules guide decisions and no known unresolved issue would materially change them. If an issue cannot be resolved now, give a conditional draft. If the user stops, deliver the supported draft and unknowns.
 
-Write the outcome to `ARCHITECTURE.md` or update the existing equivalent by default. Respect explicit chat-only requests. Ask early if the destination or scope of an update is unclear. After writing, give a short summary of the rules and key unknowns, with a link to the document. Add a project instruction link only when integration is requested.
+Write the outcome to `CONSTRAINTS_AND_PRINCIPLES.md` or update the existing equivalent by default. Respect explicit chat-only requests. Ask early if the destination or scope of an update is unclear. After writing, give a short summary of the rules and key unknowns, with a link to the document. Add a project instruction link only when integration is requested.
 
 Follow accepted principles within scope. Before departing, record an authorized exception or revision and its reason. This does not waive constraints or invariants. Preserve established rules and IDs; explain changes and retirements. Never weaken a rule merely to justify existing code.

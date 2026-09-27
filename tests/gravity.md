@@ -4,8 +4,8 @@ Run each case in a fresh session with the skill loaded. Use both Claude Code
 and Codex before claiming cross-agent behavior. Keep these trials outside the
 skill's runtime references. Judge decisions and questions, not exact wording.
 
-Record the agent and model, questions asked, final Architecture Principles and
-Constraints document, and pass or failure against the checks below. These are
+Record the agent and model, questions asked, final Architectural Constraints and
+Principles document, and pass or failure against the checks below. These are
 test cases, not recorded test results.
 
 For completed interviews, also check that dominant forces identify affected
@@ -38,8 +38,8 @@ confirmation over exceeding capacity.
 
 Pass: does not ask again about staffing or volume; settles relevant correctness
 choices before proposing mechanisms; gives a reason and cost for recommendations;
-tests a principle against concurrent bookings; writes `ARCHITECTURE.md` without
-requiring a separate request; ends with a short summary and a document link.
+tests a principle against concurrent bookings; writes `CONSTRAINTS_AND_PRINCIPLES.md`
+without requiring a separate request; ends with a short summary and a document link.
 
 ## Example application drift
 
