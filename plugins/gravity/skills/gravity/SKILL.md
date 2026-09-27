@@ -19,13 +19,15 @@ Use ASD-STE100 Simplified Technical English for all user-facing output, includin
 
 ## Establish context
 
-Identify the boundary, outcome, and decisions the user controls. Read relevant requirements and existing rules. For components, identify inherited rules and local freedom. Inspect code for facts; ask about intent. Current behavior does not establish desired architecture.
+State the system or component in scope, intended outcome, and decisions the user controls. Treat example applications as context unless the user expands scope. Read relevant requirements and existing rules. For components, identify inherited rules and local freedom. Inspect code for facts; ask about intent. Current behavior does not establish desired architecture.
 
 Keep a short record of drivers, sources, decisions, and unknowns. For each dominant driver, identify the affected stakeholder and who can confirm the requirement. Reuse known answers; flag missing input.
 
 ## Interview
 
-Ask the unresolved question most likely to change the architecture whose prerequisites are known. Ask one question, then wait, unless the user requests another format.
+Ask the unresolved question most likely to change architecture within scope, with prerequisites known. Ask one question, then wait, unless the user requests another format.
+
+Use concrete use cases to expose requirements at the system boundary. Explore external details only when they could change those requirements or a design trade-off; state the connection. Stop refining a use case when further detail would not change the architectural rules.
 
 When evidence supports a design recommendation, state its reason and main cost. Allow alternatives. Do not suggest guessed answers to factual or preference questions.
 
@@ -47,6 +49,6 @@ Use the [template](references/architecture-principles-and-constraints-template.m
 
 Finish when the rules guide decisions and no known unresolved issue would materially change them. If an issue cannot be resolved now, give a conditional draft. If the user stops, deliver the supported draft and unknowns.
 
-Use `ARCHITECTURE.md` or the existing equivalent. Present guidance in chat; write files when requested. Add a project instruction link only when integration is requested.
+Write the outcome to `ARCHITECTURE.md` or update the existing equivalent by default. Respect explicit chat-only requests. Ask early if the destination or scope of an update is unclear. After writing, give a short summary of the rules and key unknowns, with a link to the document. Add a project instruction link only when integration is requested.
 
 Follow accepted principles within scope. Before departing, record an authorized exception or revision and its reason. This does not waive constraints or invariants. Preserve established rules and IDs; explain changes and retirements. Never weaken a rule merely to justify existing code.

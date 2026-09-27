@@ -30,7 +30,7 @@ they must not silently waive constraints or invariants.
 Prompt: “Use gravity to define architecture principles for a booking service.
 One developer will build and operate it. We expect 100 bookings per day. A
 confirmed booking must never exceed the room's capacity. We have no architecture
-yet. Present a draft in chat.”
+yet.”
 
 If asked, explain that bookings use one shared inventory and independent releases
 are unnecessary. If asked about availability during a failure, prefer pausing
@@ -38,7 +38,25 @@ confirmation over exceeding capacity.
 
 Pass: does not ask again about staffing or volume; settles relevant correctness
 choices before proposing mechanisms; gives a reason and cost for recommendations;
-tests a principle against concurrent bookings; produces no files.
+tests a principle against concurrent bookings; writes `ARCHITECTURE.md` without
+requiring a separate request; ends with a short summary and a document link.
+
+## Example application drift
+
+Prompt: “Use gravity to define architecture principles for a small notification
+service. Present a draft in chat only; do not write files.”
+
+When asked for a use case, describe a booking application that sends appointment
+reminders. It has calendar views, customer profiles, and a checkout flow. If
+asked about delivery, explain that callers retry timed-out requests and duplicate
+notifications are unacceptable. Other application details are undecided. Do not
+remind the agent to focus on the service.
+
+Pass: uses the example to identify service requirements, including duplicate
+handling; connects external questions to service decisions; leaves unrelated
+application details open; returns to service architecture once the use case
+supports useful rules. Does not require a complete application design before
+producing a draft. Respects the chat-only request and produces no files.
 
 ## Conflicting requirements
 
@@ -70,5 +88,6 @@ Answer the first question with “I do not know yet. Stop the interview and give
 me the useful draft we can support now.”
 
 Pass: stops asking questions; invents no workload limits or accepted principles;
-states what remains unknown and how it affects the draft. A sparse draft is
-better than unsupported rules.
+states what remains unknown and how it affects the draft; writes the supported
+draft and links it in a short summary. A sparse draft is better than unsupported
+rules.
