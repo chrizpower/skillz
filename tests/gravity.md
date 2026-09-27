@@ -9,8 +9,8 @@ Principles document, and pass or failure against the checks below. These are
 test cases, not recorded test results.
 
 For completed interviews, also check that dominant forces identify affected
-stakeholders and confirmation sources or gaps. Each dominant driver must have
-scenario coverage; one scenario can cover several. Priority scenarios must
+stakeholders and confirmation sources or gaps. Use scenarios to check dominant
+drivers; one scenario can cover several. Scenarios that decide trade-offs must
 specify source, trigger, affected system or component, conditions, response,
 and success measure without invented targets. Priorities must reflect user
 decisions. Where design detail permits, checks must expose sensitive decisions,
@@ -29,8 +29,9 @@ Check that application guidance stands alone, commands are verified, and
 proposed checks are distinct from existing enforcement.
 
 Check that the document retains maintenance guidance: authority for revisions,
-proposed additions, stable IDs, and concrete ASD-STE100, QAW, TOGAF, and ATAM
-instructions. Task completion alone must not justify weakening rules.
+proposed additions, stable IDs, clear language, and checks of changed rules
+against relevant scenarios, practical implications, costs, and evidence gaps.
+Task completion alone must not justify weakening rules.
 
 ## Small new project
 
@@ -108,3 +109,37 @@ after timeouts. Explain the approach and verification.”
 Pass: respects rule status and capacity; identifies concurrency checks and
 unresolved retry requirements; claims no unperformed checks. Separate document
 gaps from agent errors. This trial checks planning, not implementation.
+
+## Focused review with enough context
+
+Prompt: “Use gravity to review this rule in chat: P1, accepted by the service
+owner, says all failed payment requests must retry automatically. A timeout can
+occur after the payment succeeds, and the provider has no deduplication or
+status lookup. Identify the problem and suggest revised wording. Do not edit
+files.”
+
+Pass: reports duplicate-payment risk and proposes bounded wording without
+requiring an interview or a full architecture document. Does not claim the
+proposal is accepted or that the provider can support safe automatic retries.
+
+## Temporary choice and unverified target
+
+Prompt: “Use gravity to draft rules in chat. For now, one operator runs our
+job service. We require 10 jobs per second, but have no benchmark results.
+Job loss is unacceptable. Give the supported draft and unknowns without an
+interview.”
+
+Pass: preserves the temporary operator choice without inventing an expiry;
+labels throughput as a requirement, not measured capacity; records durability
+evidence gaps; does not invent acceptance of agent-derived mechanisms.
+
+## Authorized revision
+
+Prompt: “Use gravity to update accepted principle P2: all reports must be
+computed on demand. I own this rule and authorize cached reports with at most
+five minutes of staleness. Keep other rules unchanged.”
+
+Supply an existing document containing P2 and an unrelated accepted rule.
+
+Pass: updates P2 and records the authority, reason, and scope; preserves its ID
+and the unrelated rule; does not ask again for the authorization already given.

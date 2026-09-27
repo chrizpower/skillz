@@ -10,27 +10,26 @@ Parent guidance: <link, if applicable>
 
 ## Use
 
-For each change, identify applicable rule IDs, scope, and status. Explain how
-the approach follows them. Claim compliance only with evidence; report gaps.
-Proposed rules require acceptance. Resolve conflicts and exceptions below
-before affected work proceeds.
+Apply accepted rules within their scope. Proposed rules do not govern work
+until accepted. Cite relevant rule IDs when explaining a design choice or
+conflict. Distinguish planned checks from completed verification.
 
 ## Rules
 
 ### P1 — <rule name>
 
-- **Type and status:** <principle, constraint, or invariant; scope or status differences>
+- **Type and status:** <principle, constraint, or invariant; proposed or accepted with source; scope if narrower than the document>
 - **Rule:** <permitted or rejected choices; required condition for an invariant>
 - **Reason and cost:** <driver, stakeholder, source, and trade-off; alternative if disputed>
 - **Apply:** <when relevant and required actions or decision steps>
 - **Check:** <method, evidence, and relevant scenarios; distinguish existing enforcement, proposed checks, and gaps>
-- **Revisit when:** <changed evidence or conditions>
+- **Revisit when:** <relevant changed evidence or conditions; preserve temporary status and known review conditions>
 
-<Repeat as needed. Preserve existing IDs; use P, C, or I for new rules. Mark assumptions and confirmation gaps. List shared drivers separately only to avoid repetition.>
+<Repeat as needed; combine fields where useful. Preserve existing IDs; use P, C, or I for new rules. Mark assumptions and confirmation gaps. List shared drivers separately only to avoid repetition.>
 
 ## Scenario checks
 
-<Driver coverage and user priorities. For priority scenarios: source, trigger, component, conditions, response, success measure. Record resulting choices, costs, sensitive decisions, quality interactions, risks, and missing evidence. Do not present reasoning as implementation test results.>
+<Use scenarios to check dominant drivers and record known priorities. For scenarios that decide trade-offs: source, trigger, component, conditions, response, success measure. Record relevant choices, sensitive decisions, quality interactions, risks, and missing evidence. Separate targets, estimates, and measured results. Scenario reasoning is not implementation test evidence.>
 
 ## Open questions
 
@@ -38,22 +37,21 @@ before affected work proceeds.
 
 ## Changes and exceptions
 
-This document evolves when requirements, constraints, or evidence change. A task
-request does not by itself authorize changing its governing rules.
+Accepted rules remain in effect until an authorized revision or exception.
+When a task conflicts with them, identify the conflict and any specific change
+already authorized by the user. Otherwise propose a compliant path or request
+the needed decision. Continue unaffected work. An exception to a principle does
+not waive a constraint or invariant.
 
-- **Apply:** Follow accepted rules within scope. If a task conflicts with them, report the conflict and propose a compliant alternative or request a specific exception. Continue unaffected work. Exceptions to principles do not waive constraints or invariants.
-- **Revise:** Identify the changed force or evidence, affected rule IDs, consequences, and authority for the change. Keep accepted rules in effect until an authorized revision or exception is established. Changes to wording, scope, status, or checks must not silently weaken a rule.
-- **Extend:** Reuse an existing rule when it covers the concern. Otherwise add a stable ID using the rule format above. Cite its source; mark agent-derived additions as proposed until accepted. Avoid task-specific implementation detail.
-- **Record:** Preserve rule IDs. Record the reason, authority, and scope of revisions or exceptions. Give temporary exceptions an expiry or review condition. Mark replaced rules as superseded rather than silently deleting them.
+For revisions, record the affected IDs, reason, scope, and authority. Preserve
+IDs and mark replaced rules as superseded. Do not weaken rules merely to fit
+existing code. Reuse rules where possible; mark agent-derived additions as
+proposed until accepted. Preserve temporary choices and known review conditions.
 
-For additions and revisions, use ASD-STE100 Simplified Technical English, adapted
-to software terminology without losing precision. Preserve these selected
-practices: **QAW**—cover changed drivers with prioritized scenarios that state
-source, trigger, component, conditions, response, and success measure;
-**TOGAF**—state each principle's rationale and practical implications;
-**ATAM**—check affected rules against scenarios and record sensitive decisions,
-quality trade-offs, and risks. Reuse existing evidence and record gaps. These are
-selected practices, not full framework compliance.
+Check changed rules against relevant scenarios. State their rationale and
+practical implications, including costs, quality trade-offs, and evidence gaps.
+Use ASD-STE100 Simplified Technical English adapted to software terminology;
+preserve technical precision.
 
-<Record changes here. Retain the Use and maintenance guidance in the output;
-omit other unused sections and template instructions.>
+<Record changes here. Retain the Use and Changes and exceptions guidance in a
+standalone document. Omit other unused sections and all template instructions.>
