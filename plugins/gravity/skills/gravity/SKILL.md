@@ -47,7 +47,7 @@ These are selected practices, not full framework compliance. Consult [foundation
 
 ## Deliver and maintain
 
-Use the [template](references/architecture-principles-and-constraints-template.md). Mark agent-derived rules as proposed until accepted. Preserve source authority; do not reconfirm settled decisions. Omit generic goals that cannot guide a concrete choice.
+Use the [template](references/architecture-principles-and-constraints-template.md) to make rules usable without the interview. Mark agent-derived rules as proposed until accepted. Preserve source authority; do not reconfirm settled decisions. Omit generic goals that cannot guide a concrete choice. Reference only verified tools and commands; leave implementation choices open within the rules.
 
 Finish when the rules guide decisions and no known unresolved issue would materially change them. If an issue cannot be resolved now, give a conditional draft. If the user stops, deliver the supported draft and unknowns.
 

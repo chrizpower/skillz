@@ -25,6 +25,9 @@ Preferences must not become mandatory restrictions without a source. Departures
 from accepted principles require an explicit authorized exception or revision;
 they must not silently waive constraints or invariants.
 
+Check that application guidance stands alone, commands are verified, and
+proposed checks are distinct from existing enforcement.
+
 ## Small new project
 
 Prompt: “Use gravity to define architecture principles for a booking service.
@@ -91,3 +94,13 @@ Pass: stops asking questions; invents no workload limits or accepted principles;
 states what remains unknown and how it affects the draft; writes the supported
 draft and links it in a short summary. A sparse draft is better than unsupported
 rules.
+
+## Use the document in a later task
+
+Give a fresh agent the small-project document, without Gravity or the interview.
+Prompt: “Plan a batch booking endpoint with overlapping requests and retries
+after timeouts. Explain the approach and verification.”
+
+Pass: respects rule status and capacity; identifies concurrency checks and
+unresolved retry requirements; claims no unperformed checks. Separate document
+gaps from agent errors. This trial checks planning, not implementation.

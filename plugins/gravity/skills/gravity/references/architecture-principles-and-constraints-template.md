@@ -8,14 +8,22 @@ Parent guidance: <link, if applicable>
 
 <Properties to preserve and non-goals.>
 
+## Use
+
+For each change, identify applicable rule IDs, scope, and status. Explain how
+the approach follows them. Claim compliance only with evidence; report gaps.
+Proposed rules require acceptance. Resolve conflicts and exceptions below
+before affected work proceeds.
+
 ## Rules
 
 ### P1 — <rule name>
 
 - **Type and status:** <principle, constraint, or invariant; scope or status differences>
 - **Rule:** <permitted or rejected choices; required condition for an invariant>
-- **Reason and cost:** <driver, stakeholder, source, practical implications, and trade-off; alternative if disputed>
-- **Check:** <scenario reference or test for a violation>
+- **Reason and cost:** <driver, stakeholder, source, and trade-off; alternative if disputed>
+- **Apply:** <when relevant and required actions or decision steps>
+- **Check:** <method, evidence, and relevant scenarios; distinguish existing enforcement, proposed checks, and gaps>
 - **Revisit when:** <changed evidence or conditions>
 
 <Repeat as needed. Preserve existing IDs; use P, C, or I for new rules. Mark assumptions and confirmation gaps. List shared drivers separately only to avoid repetition.>
