@@ -15,6 +15,7 @@
 
 ## Skill design
 
+- Define when the skill should activate, its expected result, and representative success and failure cases.
 - Define one clear purpose per skill. Prefer narrow corrections supported by observed failures. Consolidate overlap before adding instructions; use references for substantial detail needed only in specific cases.
 - Before and after substantive edits, compare word counts for `SKILL.md` and changed references separately. Explain growth; prefer replacing or consolidating instructions over adding them. Fewer words alone do not prove better results.
 - When shortening instructions, preserve scope, authority, stopping conditions, and evidence distinctions. Check revised guidance against existing behavioral scenarios.
