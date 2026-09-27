@@ -28,6 +28,10 @@ they must not silently waive constraints or invariants.
 Check that application guidance stands alone, commands are verified, and
 proposed checks are distinct from existing enforcement.
 
+Check that the document retains maintenance guidance: authority for revisions,
+proposed additions, stable IDs, and concrete ASD-STE100, QAW, TOGAF, and ATAM
+instructions. Task completion alone must not justify weakening rules.
+
 ## Small new project
 
 Prompt: “Use gravity to define architecture principles for a booking service.
