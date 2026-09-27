@@ -1,6 +1,6 @@
 ---
 name: gravity
-description: Define or challenge architecture principles and constraints through a focused interview. Use to resolve design priorities or revise architectural rules when conditions change.
+description: Ground software architecture in the forces that shape it, as gravity shapes structural engineering. Use a focused interview to define or challenge architecture principles and constraints, resolve design priorities, or revise rules when conditions change.
 ---
 
 # Gravity

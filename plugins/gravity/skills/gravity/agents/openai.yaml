@@ -1,4 +1,4 @@
 interface:
   display_name: "Gravity"
-  short_description: "Define architecture principles and constraints"
+  short_description: "Find the forces that shape your software architecture"
   default_prompt: "Use $gravity to identify the drivers shaping this system or component and establish its architecture principles and constraints."

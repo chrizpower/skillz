@@ -3,6 +3,19 @@
 Personal skills for Claude Code and Codex. Each installable plugin contains its
 skill source. `skills/<skill-name>` links to that source for local use.
 
+## Gravity: find the forces that shape your software
+
+A bridge must answer to gravity. An engine must answer to heat. Software gives
+us extraordinary freedom to reshape a design, but that freedom can obscure the
+forces it still has to answer to: correctness, latency, cost, and the people
+who build and operate it.
+
+Gravity brings that engineering mindset to software architecture. Through a
+focused interview, it uncovers the forces that matter, challenges trade-offs,
+and turns them into explicit principles and constraints. The result is an
+`ARCHITECTURE.md` grounded in your system, with rules you can use to design,
+review, and evolve it. Real constraints stay distinct from deliberate choices.
+
 ## Structure
 
 ```text
@@ -21,7 +34,7 @@ No build step or package manager is required.
 
 | Skill | Purpose | Codex | Claude Code |
 | --- | --- | --- | --- |
-| [gravity](skills/gravity/SKILL.md) | Identify architectural drivers and create or revise architecture principles and constraints. | `$gravity` | `/gravity` |
+| [gravity](skills/gravity/SKILL.md) | Find your software's gravity. Turn architectural forces into principles and constraints. | `$gravity` | `/gravity` |
 
 Use the [Gravity interview trials](tests/gravity.md) to check question quality,
 handling of conflicts, and the usefulness of the rules in both agents.
