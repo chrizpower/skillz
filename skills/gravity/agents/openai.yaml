@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gravity"
+  short_description: "Define architecture principles and constraints"
+  default_prompt: "Use $gravity to identify the drivers shaping this system or component and establish its architecture principles and constraints."
