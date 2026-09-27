@@ -19,7 +19,9 @@ Use ASD-STE100 Simplified Technical English for all user-facing output, includin
 
 ## Establish context
 
-State the system or component in scope, intended outcome, and decisions the user controls. Treat example applications as context unless the user expands scope. Read relevant requirements and existing rules. For components, identify inherited rules and local freedom. Inspect code for facts; ask about intent. Current behavior does not establish desired architecture.
+State the system or component in scope, intended outcome, and decisions the user controls. Treat example applications as context unless the user expands scope. Read relevant requirements and existing rules. For components, identify inherited rules and local freedom. Inspect code for facts; ask about intent.
+
+For existing systems, distinguish observed patterns from accepted rules. If a proposed rule conflicts with current behavior, state where and when it applies.
 
 Keep a short record of drivers, sources, decisions, and unknowns. For each dominant driver, identify the affected stakeholder and who can confirm the requirement. Reuse known answers; flag missing input.
 
