@@ -1,0 +1,25 @@
+{
+  "name": "gravity",
+  "version": "0.1.0",
+  "description": "Define architecture principles and constraints through a focused interview.",
+  "author": {
+    "name": "Chris Bauer",
+    "url": "https://github.com/chrizpower"
+  },
+  "repository": "https://github.com/chrizpower/skillz",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gravity",
+    "shortDescription": "Define architecture principles and constraints",
+    "longDescription": "Identify architectural forces, compare trade-offs, and establish rules with concrete scenario checks.",
+    "developerName": "Chris Bauer",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use $gravity to define architecture principles and constraints."
+    ]
+  }
+}

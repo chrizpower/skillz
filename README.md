@@ -1,15 +1,18 @@
 # skillz
 
-Personal skills for Claude Code and Codex. Keep one source copy of each skill
-in `skills/<skill-name>/SKILL.md`.
+Personal skills for Claude Code and Codex. Each installable plugin contains its
+skill source. `skills/<skill-name>` links to that source for local use.
 
 ## Structure
 
 ```text
-skills/                    Shared skill sources
-templates/skill/SKILL.md    Starter template; not an active skill
-.agents/skills/<name>       Codex link to ../../skills/<name>
-.claude/skills/<name>       Claude Code link to ../../skills/<name>
+.agents/plugins/marketplace.json          Codex marketplace catalog
+plugins/gravity/.codex-plugin/plugin.json Plugin manifest
+plugins/gravity/skills/gravity/           Shared skill source
+skills/gravity                           Link to the packaged skill
+templates/skill/SKILL.md                  Starter template
+.agents/skills/<name>                     Codex local discovery link
+.claude/skills/<name>                     Claude Code local discovery link
 ```
 
 No build step or package manager is required.
@@ -22,6 +25,45 @@ No build step or package manager is required.
 
 Use the [Gravity interview trials](tests/gravity.md) to check question quality,
 handling of conflicts, and the usefulness of the rules in both agents.
+
+## Install in Codex
+
+Run these commands with a Codex CLI that supports `codex plugin`:
+
+```sh
+codex plugin marketplace add chrizpower/skillz
+codex plugin add gravity@skillz
+```
+
+Start a new session in your target project and invoke `$gravity`. You can also
+use `/plugins` to browse the `skillz` marketplace and install Gravity.
+
+For later releases, refresh the marketplace and reinstall the plugin:
+
+```sh
+codex plugin marketplace upgrade skillz
+codex plugin add gravity@skillz
+```
+
+Start a new session after an update. Plugins use an installed cache; local edits
+do not update that copy. Use either the installed plugin or the local discovery
+links in a session to avoid duplicate skills. The links remain useful for
+development and Claude Code.
+
+For published releases, update the plugin manifest's version before committing
+and pushing.
+
+## Test the local package
+
+Before publishing, add this checkout as a marketplace source:
+
+```sh
+codex plugin marketplace add /absolute/path/to/skillz
+codex plugin add gravity@skillz
+```
+
+Use a separate target project for the interview trials. The local and Git sources
+have the same marketplace name; configure one at a time.
 
 ## Create a skill
 
@@ -49,6 +91,11 @@ Commit the source folder and both links together. Start a new session in this
 repo. Invoke the skill with `$my-skill` in Codex or `/my-skill` in Claude Code.
 Check one request that should use the skill and one that should not.
 
+To publish it as a separate plugin, follow the Gravity layout under
+`plugins/<name>/`, add its manifest and catalog entry, and replace
+`skills/<name>` with a link to the packaged source. Keep all plugin resources
+inside its folder so installation does not depend on external links.
+
 ## Keep skills portable
 
 - Use `name` and `description` in the shared YAML frontmatter.
@@ -61,7 +108,7 @@ Check one request that should use the skill and one that should not.
 - Add optional Codex metadata in `agents/openai.yaml` only when needed.
   Claude-specific frontmatter and execution features need separate checks.
 
-## Use a skill in other repos
+## Use local links in other repos
 
 To make one completed skill available to your local user in both tools, run
 these commands from this repo's root:
@@ -82,4 +129,5 @@ complete skill folder to each discovery folder and keep the copies in sync.
 ## References
 
 - [Codex skill format and discovery](https://learn.chatgpt.com/docs/build-skills)
+- [Codex plugin packaging and marketplaces](https://developers.openai.com/plugins/build/plugins)
 - [Claude Code skill format and discovery](https://code.claude.com/docs/en/skills)
