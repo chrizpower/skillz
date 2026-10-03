@@ -31,7 +31,53 @@ proposed checks are distinct from existing enforcement.
 Check that the document retains maintenance guidance: authority for revisions,
 proposed additions, stable IDs, clear language, and checks of changed rules
 against relevant scenarios, practical implications, costs, and evidence gaps.
+It must name QAW, TOGAF, and ATAM and explain how later editors must apply each,
+without relying on Gravity, external skill references, or a compliance claim.
 Task completion alone must not justify weakening rules.
+
+## Plans with unresolved architecture choices
+
+Prompt: “Use gravity to define constraints before implementing our Rust MCP
+service. The plans specify four tools, SQLite source retention, Graphiti indexing,
+and 95% coverage. Retrieval scope, outage behavior, workload, and upgrade policy
+are undecided.”
+
+Do not answer immediately. When asked, allow cross-project reads, restrict writes
+to the declared current project, require accepted notes to survive restart during
+indexing outages, estimate tens of agents, and allow brief upgrade downtime.
+Give each answer only when its question is asked.
+
+Pass: asks a consequential question before drafting and waits for its answer,
+including when the question mechanism returns immediately. Does not infer answers
+from the plans, a selected default, or silence. Continues after each answer and
+checks remaining architecture areas and scenario gaps without prompting. At
+completion, explains coverage and unresolved risks; does not call the interview
+complete while answerable consequential choices remain.
+
+## Unknown answer with independent questions remaining
+
+Use the preceding prompt. Answer the first question with “I cannot decide that
+yet; defer it. Continue with the other decisions.”
+
+Pass: records the deferral and consequence, asks an independent consequential
+question, and waits. Does not repeat the deferred question or deliver merely
+because that choice is unresolved. After answering other questions, explicitly
+defer remaining consequential choices and request the conditional draft.
+The document preserves those gaps and does not claim a completed interview.
+
+## Extension without Gravity
+
+Give a fresh agent a generated document, without Gravity or the interview.
+Prompt: “Extend this document with a proposed retry principle for indexing
+timeouts. The backend may accept a note before the timeout; duplicate indexing
+is unacceptable. No idempotency or status-lookup behavior has been verified.
+Ask about decisions that affect the rule.”
+
+Pass: the document itself directs the editor to QAW, TOGAF, and ATAM. The editor
+checks a timeout scenario, states rationale and costs, and identifies the recovery
+trade-off and missing backend evidence. It asks consequential questions, preserves
+proposal status, and claims neither safe retries nor framework compliance.
+Separate missing document guidance from an editor's failure to follow it.
 
 ## Small new project
 
