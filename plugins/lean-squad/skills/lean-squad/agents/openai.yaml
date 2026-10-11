@@ -1,0 +1,3 @@
+interface:
+  display_name: "Lean Squad"
+  short_description: "Bound context, measure cost, and preserve quality"

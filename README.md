@@ -24,6 +24,8 @@ choices.
 plugins/gravity/.codex-plugin/plugin.json Plugin manifest
 plugins/gravity/skills/gravity/           Shared skill source
 skills/gravity                           Link to the packaged skill
+plugins/lean-squad/             Lean Squad package
+skills/lean-squad               Link to the packaged skill
 templates/skill/SKILL.md                  Starter template
 .agents/skills/<name>                     Codex local discovery link
 .claude/skills/<name>                     Claude Code local discovery link
@@ -36,9 +38,12 @@ No build step or package manager is required.
 | Skill | Purpose | Codex | Claude Code |
 | --- | --- | --- | --- |
 | [gravity](skills/gravity/SKILL.md) | Find your software's gravity. Turn architectural forces into principles and constraints. | `$gravity` | `/gravity` |
+| [lean-squad](skills/lean-squad/SKILL.md) | Reduce Codex context and coordination costs, prepare bounded work, and audit session token usage. | `$lean-squad` | Codex workflow; Claude Code behavior untested |
 
 Use the [Gravity interview trials](tests/gravity.md) to check question quality,
 handling of conflicts, and the usefulness of the rules in both agents.
+Use the [Lean Squad behavioral trials](tests/lean-squad.md) to check cost-control,
+audit, authorization and resume decisions. These scenarios are not test results.
 
 ## Install in Codex
 
@@ -47,16 +52,19 @@ Run these commands with a Codex CLI that supports `codex plugin`:
 ```sh
 codex plugin marketplace add chrizpower/skillz
 codex plugin add gravity@skillz
+codex plugin add lean-squad@skillz
 ```
 
-Start a new session in your target project and invoke `$gravity`. You can also
-use `/plugins` to browse the `skillz` marketplace and install Gravity.
+Start a new session in your target project and invoke `$gravity` or
+`$lean-squad`. You can also use `/plugins` to browse the `skillz`
+marketplace and install either plugin.
 
 For later releases, refresh the marketplace and reinstall the plugin:
 
 ```sh
 codex plugin marketplace upgrade skillz
 codex plugin add gravity@skillz
+codex plugin add lean-squad@skillz
 ```
 
 Start a new session after an update. Plugins use an installed cache; local edits
@@ -74,6 +82,7 @@ Before publishing, add this checkout as a marketplace source:
 ```sh
 codex plugin marketplace add /absolute/path/to/skillz
 codex plugin add gravity@skillz
+codex plugin add lean-squad@skillz
 ```
 
 Use a separate target project for the interview trials. The local and Git sources
