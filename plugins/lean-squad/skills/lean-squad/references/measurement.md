@@ -1,7 +1,8 @@
 # Measurement and allowance control
 
 Read only the section needed for the requested task. Use the project's command
-wrapper and persistent storage rules for the examples below.
+wrapper and persistent storage rules for the examples below. The bundled helpers
+use Python 3 with the standard library and support the Codex schemas described here.
 
 ## Allowance budget
 
@@ -34,6 +35,12 @@ session or budget file is a new round, not a continuation; initialize it only
 with explicit authorization for that round and budget. Existing authorization
 for that round remains valid; do not ask again.
 
+Before preparing a continuation, identify the stop: quota exhaustion requires a
+checkpoint; invalid telemetry requires diagnosis without rebasing; project resource
+limits require the missing capacity; implementation failures require correction.
+More allowance does not resolve the latter three. Reuse a valid budget that still
+permits work unless the user explicitly authorizes a new round.
+
 Initialization creates a schema-v1 JSON baseline exclusively, after fresh telemetry
 validation. It saves the lead session, starting used/remaining percentage, observation
 time, reset identity, consumption amount and derived remaining floor. Later checks
@@ -43,6 +50,9 @@ budget decision; a child must not create its own budget or impersonate the lead.
 Exit codes: 0 permits new work under the budget; 2 stops new work; 3 means unknown
 or invalid telemetry/state. In budget mode, allow one bounded refresh for stale
 telemetry, then checkpoint if unresolved. Never delete or rebase a mismatched file.
+Reset timestamps may differ by up to 10 seconds from the immutable baseline;
+tolerance never accumulates across observations or extends the saved window.
+Larger changes, expired windows and usage rollback remain invalid.
 The helper retains a legacy fixed-floor mode for compatibility; use `--budget-file`
 for relative budgets and do not combine it with `--min-remaining-percent`.
 
@@ -59,12 +69,6 @@ Do not commit unvalidated work. If starting allowance is below the requested bud
 exhaustion is the upper bound. Concurrent account activity counts toward the measured
 drop, and rounded/delayed snapshots can overshoot an approximate stop.
 
-Validate the bundled helper from the skill directory:
-
-```sh
-python3 -m unittest discover -s scripts/tests -p test_codex_quota.py
-```
-
 ## Session audit
 
 Identify the exact root log and recursively discover descendant thread IDs from
@@ -72,12 +76,31 @@ agent activity records. Do not treat every log in the same time range as a child
 Read logs without changing them or contacting their sessions. Keep derived files
 outside the log directory. Record missing descendants or unsupported schema.
 
+Inventory top-level records and nested events before declaring response IDs absent.
+From the skill directory:
+
+```sh
+python3 scripts/usage_inventory.py --log /persistent/rollout.jsonl
+```
+
+Repeat `--log` for discovered logs. This read-only helper reports per-log coverage,
+duplicate/conflicting response keys and cumulative snapshots without conversation
+bodies. It does not discover descendants, deduplicate across files, validate token
+arithmetic, attribute models or calculate totals. Exit 2 reports incomplete scans,
+unidentified records or conflicts; exit 0 does not establish usable audit coverage.
+Inspect reported gaps and reconcile across all logs before choosing a fallback.
+
 Prefer per-response usage records. Deduplicate by `(thread_id, response_id)`;
 report conflicting duplicates instead of silently choosing one. Attribute each
 record to the latest actual model/effort context in that thread. Reconcile sums
 against final cumulative thread and turn counters. Cumulative snapshots are checks,
 not additional charges. If response records are missing, report the coverage gap;
 any cumulative-delta fallback must handle resets and be labelled separately.
+
+Separate implementation, later audit/preparation and unrelated activity by explicit
+time windows. Include the implementation handoff; exclude the current audit's usage.
+Assign each response to one phase. Check earlier reports against raw records and
+retain the original alongside any correction.
 
 Input includes cached input; output includes reasoning output. Total is input plus
 output, not the sum of all four fields. Price uncached input, cached input and output
@@ -111,12 +134,17 @@ For capacity analysis, use recorded observations and spawn results only. A faile
 spawn proves rejection at that time; completed-thread lists do not prove available
 slots. Report missing evidence instead of making new spawn attempts.
 
-This section is an audit procedure, not a bundled log parser. Use a compatible
-existing parser or build a bounded read-only extractor for the observed schema.
+Beyond the inventory, use a compatible parser or a bounded read-only extractor
+for the observed schema. Report unsupported formats rather than assuming compatibility.
 
 ## Maintenance
 
-The packaged `scripts/codex_quota.py` and its tests are the canonical source.
-After budget changes, run the helper tests above. Verify the destination's log
-schema and account compatibility before relying on its decisions. No historical
-logs, rates or project secrets are bundled.
+The packaged helpers and tests are canonical. After helper changes, run from the
+skill directory:
+
+```sh
+python3 -B -m unittest discover -s scripts/tests -p 'test_*.py'
+```
+
+Verify the destination's log schema and account compatibility before relying on
+helper results. No historical logs, rates or project secrets are bundled.

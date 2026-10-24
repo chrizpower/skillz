@@ -38,12 +38,15 @@ No build step or package manager is required.
 | Skill | Purpose | Codex | Claude Code |
 | --- | --- | --- | --- |
 | [gravity](skills/gravity/SKILL.md) | Find your software's gravity. Turn architectural forces into principles and constraints. | `$gravity` | `/gravity` |
-| [lean-squad](skills/lean-squad/SKILL.md) | Reduce Codex context and coordination costs, prepare bounded work, and audit session token usage. | `$lean-squad` | Codex workflow; Claude Code behavior untested |
+| [lean-squad](skills/lean-squad/SKILL.md) | Reduce agent context and coordination costs, prepare bounded work, and audit Codex session token usage. | `$lean-squad` | Shared workflow; Claude Code behavior untested |
 
 Use the [Gravity interview trials](tests/gravity.md) to check question quality,
 handling of conflicts, and the usefulness of the rules in both agents.
 Use the [Lean Squad behavioral trials](tests/lean-squad.md) to check cost-control,
 audit, authorization and resume decisions. These scenarios are not test results.
+Lean Squad's shared workflow uses destination project rules. Its optional quota
+and usage-inventory helpers require Python 3 and compatible Codex logs; they do
+not provide telemetry adapters for other agents.
 
 ## Install in Codex
 

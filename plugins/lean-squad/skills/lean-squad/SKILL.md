@@ -7,6 +7,8 @@ description: Reduce agent context and coordination costs, prepare bounded autono
 
 Reduce context and coordination cost while preserving accepted scope, required
 validation and existing authorization. This skill grants no additional authority.
+Use destination rules for models, commands, storage and review. The bundled
+measurement helpers support Codex logs; optimization and preparation do not require them.
 
 ## Select the task and result
 
@@ -30,6 +32,8 @@ Start with the current checkpoint, contract and relevant source spans. Prefer
 final closeout evidence over interim records; load history only when it can
 change a decision. Select relevant results and failure diagnostics; keep full
 outputs in linked artifacts. Use concise updates without losing precision.
+For repeated evidence or equivalent task instances, read
+[evidence and review reuse](references/review-reuse.md).
 
 Use one implementer for serial work. Delegate only when authorized and an
 independent bounded task justifies coordination cost. Assign objective, base,

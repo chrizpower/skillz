@@ -1,7 +1,7 @@
 {
   "name": "lean-squad",
-  "version": "0.1.0",
-  "description": "Reduce Codex context and coordination costs, prepare bounded autonomous work, and audit session token usage.",
+  "version": "0.2.0",
+  "description": "Reduce agent context and coordination costs, prepare bounded autonomous work, and audit Codex session token usage.",
   "author": {
     "name": "Chris Bauer",
     "url": "https://github.com/chrizpower"
@@ -11,7 +11,7 @@
   "interface": {
     "displayName": "Lean Squad",
     "shortDescription": "Bound context, measure cost, and preserve quality",
-    "longDescription": "Reduce Codex context and coordination costs, prepare bounded autonomous work, and audit session token usage.",
+    "longDescription": "Reduce agent context and coordination costs, prepare bounded autonomous work, and audit Codex session token usage.",
     "developerName": "Chris Bauer",
     "category": "Productivity",
     "capabilities": [
