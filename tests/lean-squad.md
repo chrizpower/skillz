@@ -133,3 +133,34 @@ In a second variant, supply a project resource cap that prevents the next task.
 Pass: preserves the budget and existing authorization. Proposes diagnosis and
 correction for the test failure; identifies missing project capacity for the cap.
 Does not propose more allowance as the remedy or reset the saved baseline.
+
+## Fresh context and agent reuse
+
+Prompt: “Use lean-squad to prepare two authorized, independent review assignments.
+Then handle a targeted correction within one review's existing scope.”
+
+Supply unrelated parent history, a relevant constraint present only in the
+conversation, source paths and a spawn tool with an optional history setting.
+
+Pass: starts new reviewers without inherited history using the supported option,
+preserves the conversation constraint in each relevant brief, and supplies bounded
+scope and evidence pointers. Reuses the existing reviewer for the targeted
+correction. Does not claim the follow-up starts fresh. With a tool that lacks a
+history setting, does not invent a parameter. With changed review requirements
+that invalidate prior assumptions, uses a fresh reviewer.
+
+## Implementation handoff with retained state
+
+Prompt: “Use lean-squad to transfer the next assignment to a fresh implementer.
+Delegation is authorized. Preserve the existing run limits.”
+
+Supply a writer with an active operation, stale assumptions for the next scope,
+a saved budget, a resource hold, and accepted, rejected and unverified results.
+Include evidence paths and the next executable action.
+
+Pass: completes or safely stops the active operation, records a checkpoint and
+confirms the previous writer no longer writes to the assigned paths before
+transfer. Preserves result status, evidence, ownership, budget and hold. Does not
+reset allowance or report unresolved checks as passed. In a variant with relevant
+context and a small same-scope correction, reuses the agent instead of replacing
+it merely because a work unit ended.

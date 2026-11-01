@@ -40,8 +40,20 @@ independent bounded task justifies coordination cost. Assign objective, base,
 owned paths, invariants, checks, exclusions and expected result. Name who needs
 that result and when; preserve other writers' edits.
 
-Reuse agents within settled scopes. Use fresh review context when the review
-scope or governing requirements change enough to invalidate prior assumptions.
+Start new agents with fresh context by default. Use the runtime's supported
+option; when available, set `fork_turns="none"`. Include applicable instructions
+and relevant conversation decisions in the brief. Inherit history only when
+the assignment needs it.
+
+Reuse agents for targeted fixes within the same bounded scope. A follow-up
+retains context. Use a fresh reviewer when changed scope or requirements
+invalidate prior assumptions.
+
+Replace an implementation agent when unrelated context or stale assumptions
+would impair the next assignment. Before transfer, complete or safely stop
+active operations, save a checkpoint, and confirm the previous agent no longer
+writes to the assigned paths.
+
 Confirm actual model routing; do not infer it from role names. Avoid duplicate
 leads, routine polling and unchanged retries after capacity or missing-input
 failures. Check available capacity before delegation. If required review cannot
@@ -56,9 +68,12 @@ for unchanged inputs and the scope it covers. Additional independent review
 should depend on risk and available authority, not this skill alone.
 
 Continue ready authorized work within scope and stopping conditions. Record
-base, pending paths/hashes, validation, review status, blockers and next action
-in a checkpoint. After interruption, inspect live changes and retained outputs;
-do not assume in-flight commands completed. Preserve findings and do not accept
+base, pending paths/hashes, validation, review status, blockers, current ownership
+and next action in a checkpoint. At handoff, distinguish accepted, rejected and
+unverified results and link their evidence. Preserve existing budgets, resource
+limits and holds when applicable; a fresh agent does not reset them. After
+interruption, inspect live changes and retained outputs; do not assume in-flight
+commands completed. Preserve findings and do not accept
 behavior with unresolved required checks. Follow the project's defect procedure.
 
 ## Measure the result

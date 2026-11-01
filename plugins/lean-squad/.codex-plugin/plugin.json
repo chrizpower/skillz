@@ -1,6 +1,6 @@
 {
   "name": "lean-squad",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Reduce agent context and coordination costs, prepare bounded autonomous work, and audit Codex session token usage.",
   "author": {
     "name": "Chris Bauer",
