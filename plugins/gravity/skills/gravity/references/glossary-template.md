@@ -26,7 +26,7 @@ During each task that uses domain concepts:
   Compare stated meaning with code and surface disagreements. Code shows current
   usage; it does not decide domain meaning. Identify missing domain expertise.
 - Record resolved changes during the task. Keep unconfirmed definitions proposed.
-  For changes or deletions, check affected terms and references, record the reason,
+  For changes or deletions, check affected terms and references, explain the reason,
   and identify remaining naming differences. Do not rename unrelated code or change
   public interfaces without task authorization. If file edits are outside scope,
   present the proposed glossary change instead.
@@ -38,30 +38,16 @@ glossary as understanding develops; no task must complete the whole glossary.
 These practices do not require aggregates, repositories, events, or other DDD
 patterns unless the design needs them.
 
-## Terms
+## Language
 
-### <Context>: <preferred term>
+**<Term>**: <Short definition.>
 
-- **Definition:** <meaning and relevant boundary or example>
-- **Status and source:** <accepted with source, or proposed with confirmation gap>
-- **Avoid:** <confusing alternatives within this context; omit if unnecessary>
-- **Relationships:** <related concepts and distinctions; omit if unnecessary>
+<Use this simple format for each term. Add an Avoid note, example, or context
+qualifier only when needed to distinguish meanings. Mark unconfirmed entries as
+proposed; accepted entries need no status or source fields unless disputed.
+Add sections for relationships, ambiguities, or change explanations only when
+needed to resolve ambiguity. Do not create empty sections or routine change logs.>
 
-## Open meanings
-
-<Unresolved term or context, question, consequence, and resolution path.>
-
-## Changes
-
-<Changed or deleted term, context, reason, and authority; note affected references
-or remaining naming differences.>
-
-## DDD sources
-
-- [Eric Evans, Domain-Driven Design Reference](https://www.domainlanguage.com/ddd/): core definitions and patterns.
-- [Martin Fowler, Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html): shared language tested in conversation and refined with understanding.
-- [Vaughn Vernon, Domain-Driven Design Distilled](https://www.informit.com/store/domain-driven-design-distilled-9780134434421): developing language within bounded contexts and checking scenarios.
-
-<Retain Use and maintain and DDD sources so later agents can apply this guidance
-without Gravity. Preserve existing content. Omit unused optional fields and these
+<Retain Use and maintain so later agents can apply this guidance
+without Gravity. Preserve existing content. Omit unnecessary sections and these
 template instructions; keep unresolved meanings explicit.>

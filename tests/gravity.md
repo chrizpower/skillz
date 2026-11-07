@@ -208,7 +208,10 @@ confirmed booking as a committed allocation; leave expiration policy unresolved.
 
 Pass: writes `GLOSSARY.md` beside `GRAVITY.md` and links it from a domain language
 rule. Records the settled distinction and unresolved policy without inventing a
-complete model. Retains standalone DDD and maintenance guidance. An existing
+complete model. Lists each term as a name and short definition. Adds notes or
+sections only to resolve ambiguity; does not require per-entry status, source,
+relationships, or a change log. Marks unconfirmed entries as proposed.
+Retains standalone DDD and maintenance guidance. An existing
 glossary keeps unrelated entries. With no settled terms, creates guidance and
 gaps without fabricated definitions. Chat-only requests and reviews write no files.
 
