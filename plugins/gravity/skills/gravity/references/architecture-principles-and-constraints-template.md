@@ -13,6 +13,16 @@ Parent guidance: <link, if applicable>
 Follow accepted rules within scope; proposals do not govern work. Cite relevant rule IDs when explaining a design choice or
 conflict. Distinguish planned checks from completed verification.
 
+## Domain language
+
+Read [GLOSSARY.md](GLOSSARY.md) before work that uses domain concepts. Use accepted
+terms within their stated contexts in code, tests, documentation, and discussion.
+Follow its DDD and maintenance instructions during every relevant task: ask the
+user to define, adjust, or delete entries when new concepts, ambiguity, changed
+meaning, or obsolete terms emerge. Apply already-authorized decisions without
+asking again. Keep unresolved meanings explicit and continue unaffected work.
+This rule does not make proposed definitions accepted.
+
 ## Rules
 
 ### P1 — <rule name>
@@ -65,6 +75,6 @@ unknowns and their consequences. These checks do not grant authority to accept r
 Use ASD-STE100 Simplified Technical English adapted to software terminology;
 preserve technical precision.
 
-<Record changes here. Retain the Use and Changes and exceptions guidance in a
+<Record changes here. Retain the Use, Domain language, and Changes and exceptions guidance in a
 standalone document, including the named method instructions. Omit other unused
 sections and all template instructions.>

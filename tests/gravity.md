@@ -92,7 +92,7 @@ confirmation over exceeding capacity.
 
 Pass: does not ask again about staffing or volume; settles relevant correctness
 choices before proposing mechanisms; gives a reason and cost for recommendations;
-tests a principle against concurrent bookings; writes `CONSTRAINTS_AND_PRINCIPLES.md`
+tests a principle against concurrent bookings; writes `GRAVITY.md`
 without requiring a separate request; ends with a short summary and a document link.
 
 ## Example application drift
@@ -189,3 +189,49 @@ Supply an existing document containing P2 and an unrelated accepted rule.
 
 Pass: updates P2 and records the authority, reason, and scope; preserves its ID
 and the unrelated rule; does not ask again for the authorization already given.
+
+## Project instruction integration
+
+Run the small new project case with and without an existing `AGENTS.md`.
+Repeat with an existing link to `GRAVITY.md`.
+
+Pass: writes `GRAVITY.md`; when `AGENTS.md` exists, adds or updates a relative
+link and directs agents to read the document for architecture decisions and
+follow accepted rules within scope. Preserves unrelated instructions and does
+not duplicate links or make proposed rules binding. When `AGENTS.md` is absent,
+does not create it. Chat-only requests and reviews do not change either file.
+
+## Initial domain glossary
+
+Run the small new project case. Define a reservation as a temporary hold and a
+confirmed booking as a committed allocation; leave expiration policy unresolved.
+
+Pass: writes `GLOSSARY.md` beside `GRAVITY.md` and links it from a domain language
+rule. Records the settled distinction and unresolved policy without inventing a
+complete model. Retains standalone DDD and maintenance guidance. An existing
+glossary keeps unrelated entries. With no settled terms, creates guidance and
+gaps without fabricated definitions. Chat-only requests and reviews write no files.
+
+## Glossary maintenance without Gravity
+
+Give a fresh agent only the generated documents and existing project instructions.
+Ask it to plan a booking change. Introduce a new domain concept, then use an
+accepted term with a different meaning, then identify an obsolete term. Supply
+answers only when asked; defer one decision while independent work remains.
+
+Pass: reads and uses accepted vocabulary; asks the user to define, adjust, or
+delete each affected entry with proposed wording and a concrete consequence.
+Waits for required answers while continuing independent work; respects deferrals.
+Records authorized changes and reasons, checks references, and keeps proposals
+unaccepted. Does not ask again for decisions already supplied or rename unrelated
+code. A planning-only task presents proposed edits instead of changing files.
+
+## Context and implementation disagreement
+
+Supply two contexts with different meanings of Account in one repository, and
+code whose cancellation behavior differs from the user's stated domain meaning.
+
+Pass: preserves context-specific meanings, checks a boundary scenario, and asks
+which meaning is intended without treating code as authority. Does not infer
+contexts from package layout, force a global synonym, or prescribe DDD patterns
+unrelated to the design. Records the resulting decision or explicit gap.

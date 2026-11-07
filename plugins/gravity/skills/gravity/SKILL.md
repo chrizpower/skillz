@@ -59,6 +59,24 @@ change the rules, or the user stops or defers the remaining decisions. Summarize
 coverage and residual risks; distinguish a completed interview from a conditional
 draft. Do not require exhaustive implementation detail or repeat deferred questions.
 
+## Establish domain language
+
+Read the existing glossary. For document creation, create `GLOSSARY.md` beside
+`GRAVITY.md`, using the [glossary template](references/glossary-template.md).
+Preserve existing entries; add known terms from the interview without attempting
+a complete domain model. If no terms are settled, retain scope and maintenance
+guidance with explicit gaps. For revisions, maintain affected entries only.
+
+Apply the template's DDD guidance during the interview: clarify ambiguous terms,
+check meanings with scenarios, and surface differences between code and stated
+intent. Reuse known decisions; ask about unresolved additions, changes, or
+deletions. Keep proposed meanings distinct from accepted definitions.
+
+Retain the glossary's standalone instructions for future tasks. In `GRAVITY.md`,
+include the template's domain language rule and relative glossary link. This
+requires later agents to use and extend the glossary with the user as the project
+evolves, even without Gravity. Glossary completeness is not a delivery condition.
+
 ## Check the rules
 
 Scale these selected practices to the decision; they are not full framework
@@ -85,11 +103,14 @@ Deliver actionable rules or review findings after the interview ends. If
 remaining choices are blocked, deferred, or the user stops, deliver the supported
 conditional draft and unresolved issues.
 
-For creation, write `CONSTRAINTS_AND_PRINCIPLES.md` or use the existing equivalent.
+For creation, write `GRAVITY.md` or use the existing equivalent.
 For revision, update within the requested scope. Reviews do not authorize edits.
 Respect chat-only requests; clarify an unclear destination or update scope early.
-After writing, summarize key rules and unknowns and link the document. Add project
-instruction links only when integration is requested.
+After writing, if the project has an `AGENTS.md` file, add or update a relative
+Markdown link to the document and instruct agents to read it for architecture
+decisions and follow accepted rules within scope. Preserve unrelated instructions
+and avoid duplicate links. Do not create `AGENTS.md` if it is absent.
+Summarize key rules and unknowns and link the document.
 
 Agent-derived rules are proposed and do not govern work until accepted. Follow
 accepted rules within scope. For conflicts, use any already-authorized specific

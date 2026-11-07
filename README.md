@@ -12,10 +12,11 @@ who build and operate it.
 
 Gravity brings that engineering mindset to software architecture. Through a
 focused interview, it uncovers the forces that matter, challenges trade-offs,
-and turns them into explicit principles and constraints. The result is an
-`CONSTRAINTS_AND_PRINCIPLES.md` grounded in your system, with rules you can use
+and turns them into explicit principles and constraints. The result is a
+`GRAVITY.md` grounded in your system, with rules you can use
 to design, review, and evolve it. Real constraints stay distinct from deliberate
-choices.
+choices. A companion `GLOSSARY.md` establishes shared domain language and guides
+agents to maintain it with you as the project evolves.
 
 ## Structure
 
