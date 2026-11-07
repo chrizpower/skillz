@@ -4,50 +4,42 @@ Scope: <domain and known bounded contexts; mark uncertain boundaries>
 
 ## Use and maintain
 
-This document records the project's ubiquitous language: domain terms shared by
-domain experts and developers and used consistently in discussion, documentation,
-code, and tests. A bounded context is the boundary within which a domain model
-and its terms have consistent meanings. Different contexts can use the same word
-with different meanings; state the context rather than forcing one definition.
-Determine boundaries from domain meaning, not repository or deployment structure.
+Use this ubiquitous language consistently in discussion, documentation, code,
+and tests. Domain experts and developers define it together. A bounded context
+gives a model and its terms consistent meanings. Preserve different meanings
+across contexts; determine boundaries from domain meaning, not code or deployment
+structure.
 
 During each task that uses domain concepts:
 
-- Read relevant entries and use accepted terms. Avoid listed alternatives within
-  that context; preserve external interface names and explain mappings when needed.
-- When a new concept, ambiguous use, changed meaning, or obsolete term appears,
-  ask the user to define, adjust, or delete the affected entry. Propose precise
-  wording and explain the consequence with a concrete example. Use a structured
-  question tool when available; otherwise ask a separate question.
-- Reuse known answers and existing authorization. Wait for required answers before
-  dependent work; silence is not acceptance. Continue independent work and record
-  deferred meanings and their consequences without repeatedly asking.
-- Check definitions and relationships against normal and boundary scenarios.
-  Compare stated meaning with code and surface disagreements. Code shows current
-  usage; it does not decide domain meaning. Identify missing domain expertise.
-- Record resolved changes during the task. Keep unconfirmed definitions proposed.
-  For changes or deletions, check affected terms and references, explain the reason,
-  and identify remaining naming differences. Do not rename unrelated code or change
-  public interfaces without task authorization. If file edits are outside scope,
-  present the proposed glossary change instead.
+- Read relevant entries; use accepted terms and avoid listed alternatives within
+  context. Preserve external interface names; explain mappings when needed.
+- For new, ambiguous, changed, or obsolete meanings, ask the user to define,
+  adjust, or delete the entry. Propose wording and a concrete consequence. Use a
+  structured question tool if available; otherwise ask separately.
+- Reuse answers and authorization. Wait for required answers before dependent
+  work; silence is not acceptance. Continue independent work; record deferrals
+  and consequences without asking again.
+- Check meanings and relationships against normal and boundary scenarios.
+  Surface disagreements with code; current usage does not decide meaning.
+  Identify missing domain expertise.
+- Check affected terms and references when changing or deleting entries. Record
+  authorized changes, reasons, and remaining naming differences. Keep unconfirmed
+  definitions proposed. If edits are outside scope,
+  propose changes instead. Do not rename unrelated code or change public
+  interfaces without authorization.
 
-Keep definitions concise but include behavior, lifecycle, or examples when needed
-to distinguish concepts. Record domain relationships, not implementation plans.
-Include technical terms only when they have a domain-specific meaning. Extend the
-glossary as understanding develops; no task must complete the whole glossary.
-These practices do not require aggregates, repositories, events, or other DDD
-patterns unless the design needs them.
+Include behavior, lifecycle, examples, or domain relationships only to distinguish
+meanings; omit implementation plans and generic technical terms. No task must
+complete the glossary. Other DDD patterns are optional unless the design needs them.
 
 ## Language
 
 **<Term>**: <Short definition.>
 
-<Use this simple format for each term. Add an Avoid note, example, or context
-qualifier only when needed to distinguish meanings. Mark unconfirmed entries as
-proposed; accepted entries need no status or source fields unless disputed.
-Add sections for relationships, ambiguities, or change explanations only when
-needed to resolve ambiguity. Do not create empty sections or routine change logs.>
+<Add notes or sections only to clarify meanings. Mark unconfirmed entries proposed;
+accepted entries need no status or source unless disputed. Omit empty sections
+and routine change logs.>
 
-<Retain Use and maintain so later agents can apply this guidance
-without Gravity. Preserve existing content. Omit unnecessary sections and these
-template instructions; keep unresolved meanings explicit.>
+<Retain Use and maintain for editors without Gravity. Preserve existing content
+and explicit gaps. Remove template instructions.>

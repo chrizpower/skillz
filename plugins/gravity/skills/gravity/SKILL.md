@@ -44,38 +44,28 @@ performance, operations, and evolution; distinguish settled, deferred, blocked,
 and irrelevant areas with reasons. Avoid a fixed questionnaire.
 
 Use concrete boundary use cases. Explore external details only when they affect
-requirements or trade-offs; explain the connection. Stop refining when further
-detail would not change the rules.
+requirements or trade-offs; explain the connection.
 
 Support recommendations with evidence, reason, and main cost. Allow alternatives
-and unknown answers; defaults and silence are not decisions. After each answer,
-state only what changed. Record unknowns, their consequences, and resolution
-paths; continue with independent questions where useful.
+and unknown answers; defaults and silence are not decisions. Record unknowns,
+their consequences, and resolution paths.
 
-After each answer, reassess coverage and scenario gaps, then ask the next
-consequential question. Do not stop because one topic is settled, one answer is
-unknown, or a draft exists. Finish when no answerable question could materially
-change the rules, or the user stops or defers the remaining decisions. Summarize
-coverage and residual risks; distinguish a completed interview from a conditional
-draft. Do not require exhaustive implementation detail or repeat deferred questions.
+After each answer, state what changed, reassess coverage and scenario gaps, and
+ask the next answerable question that could materially change the rules. Continue
+independent questions when a choice is blocked or deferred; do not repeat deferred
+questions or require exhaustive implementation detail. Finish when none remain
+or the user stops. Summarize coverage and residual risks; deliver a conditional
+draft if consequential choices remain unresolved.
 
 ## Establish domain language
 
-Read the existing glossary. For document creation, create `GLOSSARY.md` beside
-`GRAVITY.md`, using the [glossary template](references/glossary-template.md).
-Preserve existing entries; add known terms from the interview without attempting
-a complete domain model. If no terms are settled, retain scope and maintenance
-guidance with explicit gaps. For revisions, maintain affected entries only.
-
-Apply the template's DDD guidance during the interview: clarify ambiguous terms,
-check meanings with scenarios, and surface differences between code and stated
-intent. Reuse known decisions; ask about unresolved additions, changes, or
-deletions. Keep proposed meanings distinct from accepted definitions.
-
-Retain the glossary's standalone instructions for future tasks. In `GRAVITY.md`,
-include the template's domain language rule and relative glossary link. This
-requires later agents to use and extend the glossary with the user as the project
-evolves, even without Gravity. Glossary completeness is not a delivery condition.
+Read the existing glossary and apply the [glossary template's](references/glossary-template.md)
+DDD and maintenance guidance during the interview. For document creation, create
+or maintain `GLOSSARY.md` beside `GRAVITY.md`; preserve existing entries and add
+settled terms. For revisions, update affected entries only. Retain standalone
+guidance and explicit gaps, even if no terms are settled; completeness is not a
+delivery condition. Include the architecture template's domain language rule
+and relative glossary link in `GRAVITY.md`.
 
 ## Check the rules
 
@@ -95,13 +85,8 @@ For documents, read and adapt the [template](references/architecture-principles-
 Retain standalone use, maintenance, and QAW/TOGAF/ATAM instructions for later
 editors without the skill. Omit other unused sections and generic goals; combine
 fields where useful. Rules must stand alone and leave compliant implementation
-choices open. Verify referenced
-tools and commands. State where and when rules that conflict with current
-behavior apply.
-
-Deliver actionable rules or review findings after the interview ends. If
-remaining choices are blocked, deferred, or the user stops, deliver the supported
-conditional draft and unresolved issues.
+choices open. Verify referenced tools and commands. State where and when rules
+that conflict with current behavior apply.
 
 For creation, write `GRAVITY.md` or use the existing equivalent.
 For revision, update within the requested scope. Reviews do not authorize edits.

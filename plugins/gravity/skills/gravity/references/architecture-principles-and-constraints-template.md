@@ -16,12 +16,7 @@ conflict. Distinguish planned checks from completed verification.
 ## Domain language
 
 Read [GLOSSARY.md](GLOSSARY.md) before work that uses domain concepts. Use accepted
-terms within their stated contexts in code, tests, documentation, and discussion.
-Follow its DDD and maintenance instructions during every relevant task: ask the
-user to define, adjust, or delete entries when new concepts, ambiguity, changed
-meaning, or obsolete terms emerge. Apply already-authorized decisions without
-asking again. Keep unresolved meanings explicit and continue unaffected work.
-This rule does not make proposed definitions accepted.
+terms within their contexts and follow its DDD and maintenance instructions.
 
 ## Rules
 
